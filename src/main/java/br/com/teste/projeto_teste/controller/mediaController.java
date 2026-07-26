@@ -24,15 +24,15 @@ public class mediaController {
 
 
     @GetMapping()
-    private ResponseEntity<Media> media(@RequestBody Entrada entrada, Soma soma){
+    private ResponseEntity<Media> media(@RequestBody Entrada entrada){
 
         try {
-            Media media = this.mediaService.media(entrada, soma);
+            Media media = this.mediaService.media(entrada);
 
             return new ResponseEntity<Media>(media, HttpStatus.OK);
 
         } catch (Exception e) {
-            throw new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }

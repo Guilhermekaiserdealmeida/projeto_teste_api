@@ -10,14 +10,10 @@ public class SomaService {
     public Soma soma(Entrada entrada){
 
         Integer somaFinal = 0;
-        float mediaFinal = 0;
-
 
         for (Integer numeroAtual : entrada.getLista()) {
             somaFinal += numeroAtual;
         }
-
-        mediaFinal = somaFinal/ entrada.getLista().size();
 
         Soma soma1 = new Soma();
         soma1.setResultado(somaFinal);
